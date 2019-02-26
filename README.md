@@ -11,7 +11,7 @@ JGrowing不是属于某个人的项目，而是属于组织项目。我的想法
 ![脑图](https://github.com/javagrowing/JGrowing/blob/master/JGrade.png)
 
 学习Java可以按照下面的顺序来学习，当然你也可以查漏补缺查看自己感兴趣的部分:
-### 1. 计算机基础
+### 1. [计算机基础](https://github.com/javagrowing/JGrowing/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80)
 这部分和语言无关，苦练基本功，为以后做好准备。
 #### 操作系统
 #### 计算机网络
