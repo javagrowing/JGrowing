@@ -20,12 +20,14 @@ JGrowing不是属于某个人的项目，而是属于组织项目。我的想法
 ## 2. 数据结构和算法
 ### 数据结构
 ### 算法
-## 3. Java基础
-### Java特性
-### 基本程序设计
-### Java并发编程
-### JVM
+## 3. [Java基础](https://github.com/javagrowing/JGrowing/tree/master/Java%E5%9F%BA%E7%A1%80)
+### 3.1Java特性
+### 3.2基本程序设计
+### 3.3Java并发编程
+### 3.4JVM
+[异步技巧之CompletableFuture](https://github.com/javagrowing/JGrowing/blob/master/Java%E5%9F%BA%E7%A1%80/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E6%A0%B8%E5%BF%83%E5%B7%A5%E5%85%B7/%E5%BC%82%E6%AD%A5%E6%8A%80%E5%B7%A7%E4%B9%8BCompletableFuture.md)
 ## 4. [分析设计](https://github.com/javagrowing/JGrowing/tree/master/%E5%88%86%E6%9E%90%E8%AE%BE%E8%AE%A1)
+[你的项目应该如何分层](https://github.com/javagrowing/JGrowing/blob/master/%E5%88%86%E6%9E%90%E8%AE%BE%E8%AE%A1/%E4%BD%A0%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95%E5%88%86%E5%B1%82.md)
 ### 设计原则
 ### 设计模式
 ### 领域驱动设计
@@ -59,7 +61,7 @@ JGrowing不是属于某个人的项目，而是属于组织项目。我的想法
 
 ## 你的参与
 JGrowing中大部分文章目前都没有写，希望你能参与进来一起，怎么做？
-- 加入JavaGrowing组织，https://github.com/javagrowing
+- 联系我，加入JavaGrowing组织，https://github.com/javagrowing
 - 选出一个你感兴趣的主题，进行原创，当然如果你发现了一些很优秀的文章（能联系上作者的），联系作者进行转载。
 - 对学习路线有什么建议，或者有什么不对的地方提出PR进行修改。
 
