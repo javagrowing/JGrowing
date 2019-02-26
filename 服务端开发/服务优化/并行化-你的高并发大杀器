@@ -1,0 +1,231 @@
+
+# 1.前言
+想必热爱游戏的同学小时候，都幻想过要是自己要是能像鸣人那样会多重影分身之术，就能一边打游戏一边上课了，可惜漫画就是漫画，现实中并没有这个技术，你要么只有老老实实的上课，要么就只有逃课去打游戏了。虽然在现实中我们无法实现多重影分身这样的技术，但是我们可以在计算机世界中实现我们这样的愿望。
+# 2.计算机中的分身术
+计算机中的分身术不是天生就有了。在1971年，1971年，英特尔推出的全球第一颗通用型微处理器4004，由2300个晶体管构成。当时，公司的联合创始人之一戈登摩尔就提出大名鼎鼎的“摩尔定律”——每过18个月，芯片上可以集成的晶体管数目将增加一倍。最初的主频740kHz(每秒运行74万次)，现在过了快50年了，大家去买电脑的时候会发现现在的主频都能达到4.0GHZ了(每秒40亿次)。但是主频越高带来的收益却是越来越小:
+- 据测算，主频每增加1G，功耗将上升25瓦，而在芯片功耗超过150瓦后，现有的风冷散热系统将无法满足散热的需要。有部分CPU都可以用来煎鸡蛋了。
+- 流水线过长，使得单位频率效能低下，越大的主频其实整体性能反而不如小的主频。
+- 戈登摩尔认为摩尔定律未来10-20年会失效。
+
+在单核主频遇到瓶颈的情况下，多核CPU应运而生，不仅提升了性能，并且降低了功耗。所以多核CPU逐渐成为现在市场的主流，这样让我们的多线程编程也更加的容易。
+
+说到了多核CPU就一定要说GPU，大家可能对这个比较陌生，但是一说到显卡就肯定不陌生，笔者搞过一段时间的CUDA编程，我才意识到这个才是真正的并行计算，大家都知道图片像素点吧，比如1920*1080的图片有210万个像素点，如果想要把一张图片的每个像素点都进行转换一下，那在我们java里面可能就要循环遍历210万次。
+就算我们用多线程8核CPU，那也得循环几十万次。但是如果使用Cuda，最多可以3*65535*512=100661760(一亿)个线程并行执行，就这种级别的图片那也是马上处理完成。但是Cuda一般适合于图片这种，有大量的像素点需要同时处理，但是其支持指令不多所以逻辑不能太复杂。GPU只是用来扩展介绍，感兴趣可以和笔者交流。
+
+
+# 3.应用中的并行
+一说起让你的服务高性能的手段，那么异步化，并行化这些肯定会第一时间在你脑海中显现出来，在之前的文章：[《异步化，你的高并发大杀器》](https://juejin.im/post/5b4cd263e51d4519846971e0)中已经介绍过了异步化的优化手段，有兴趣的朋友可以看看。并行化可以用来配合异步化，也可以用来单独做优化。
+
+我们可以想想有这么一个需求,在你下外卖订单的时候，这笔订单可能还需要查，用户信息，折扣信息，商家信息，菜品信息等，用同步的方式调用，如下图所示:
+
+![](https://user-gold-cdn.xitu.io/2018/9/11/165c869c83dba147?w=403&h=968&f=png&s=45360)
+
+设想一下这5个查询服务，平均每次消耗50ms，那么本次调用至少是250ms，我们细想一下，在这个这五个服务其实并没有任何的依赖，谁先获取谁后获取都可以，那么我们可以想想，是否可以用多重影分身之术，同时获取这五个服务的信息呢？优化如下:
+
+![](https://user-gold-cdn.xitu.io/2018/9/11/165c8784cb1288ee?w=1551&h=822&f=png&s=62293)
+将这五个查询服务并行查询，在理想情况下可以优化至50ms。当然说起来简单，我们真正如何落地呢？
+## 3.1 CountDownLatch/Phaser
+CountDownLatch和Phaser是JDK提供的同步工具类Phaser是1.7版本之后提供的工具类而CountDownLatch是1.5版本之后提供的工具类。这里简单介绍一下CountDownLatch，可以将其看成是一个计数器，await()方法可以阻塞至超时或者计数器减至0，其他线程当完成自己目标的时候可以减少1，利用这个机制我们可以将其用来做并发。
+可以用如下的代码实现我们上面的下订单的需求:
+
+```
+public class CountDownTask {
+    private static final int CORE_POOL_SIZE = 4;
+    private static final int MAX_POOL_SIZE = 12;
+    private static final long KEEP_ALIVE_TIME = 5L;
+    private final static int QUEUE_SIZE = 1600;
+
+    protected final static ExecutorService THREAD_POOL = new ThreadPoolExecutor(CORE_POOL_SIZE, MAX_POOL_SIZE,
+            KEEP_ALIVE_TIME, TimeUnit.SECONDS, new LinkedBlockingQueue<>(QUEUE_SIZE));
+    public static void main(String[] args) throws InterruptedException {
+        // 新建一个为5的计数器
+        CountDownLatch countDownLatch = new CountDownLatch(5);
+        OrderInfo orderInfo = new OrderInfo();
+        THREAD_POOL.execute(() -> {
+            System.out.println("当前任务Customer,线程名字为:" + Thread.currentThread().getName());
+            orderInfo.setCustomerInfo(new CustomerInfo());
+            countDownLatch.countDown();
+        });
+        THREAD_POOL.execute(() -> {
+            System.out.println("当前任务Discount,线程名字为:" + Thread.currentThread().getName());
+            orderInfo.setDiscountInfo(new DiscountInfo());
+            countDownLatch.countDown();
+        });
+        THREAD_POOL.execute(() -> {
+            System.out.println("当前任务Food,线程名字为:" + Thread.currentThread().getName());
+            orderInfo.setFoodListInfo(new FoodListInfo());
+            countDownLatch.countDown();
+        });
+        THREAD_POOL.execute(() -> {
+            System.out.println("当前任务Tenant,线程名字为:" + Thread.currentThread().getName());
+            orderInfo.setTenantInfo(new TenantInfo());
+            countDownLatch.countDown();
+        });
+        THREAD_POOL.execute(() -> {
+            System.out.println("当前任务OtherInfo,线程名字为:" + Thread.currentThread().getName());
+            orderInfo.setOtherInfo(new OtherInfo());
+            countDownLatch.countDown();
+        });
+        countDownLatch.await(1, TimeUnit.SECONDS);
+        System.out.println("主线程："+ Thread.currentThread().getName());
+    }
+}
+
+```
+建立一个线程池(具体配置根据具体业务，具体机器配置)，进行并发的执行我们的任务(生成用户信息，菜品信息等)，最后利用await方法阻塞等待结果成功返回。
+
+## 3.2CompletableFuture
+相信各位同学已经发现，CountDownLatch虽然能实现我们需要满足的功能但是其任然有个问题是，在我们的业务代码需要耦合CountDownLatch的代码，比如在我们获取用户信息之后我们会执行countDownLatch.countDown()，很明显我们的业务代码显然不应该关心这一部分逻辑，并且在开发的过程中万一写漏了，那我们的await方法将只会被各种异常唤醒。
+
+所以在JDK1.8中提供了一个类CompletableFuture，它是一个多功能的非阻塞的Future。（什么是Future：用来代表异步结果，并且提供了检查计算完成，等待完成，检索结果完成等方法。）在我之前的这篇文章中详细介绍了[《异步技巧之CompletableFuture》](https://juejin.im/post/5b4622df5188251ac9766f47#heading-1)，有兴趣的可以看这篇文章。我们将每个任务的计算完成的结果都用CompletableFuture来表示，利用CompletableFuture.allOf汇聚成一个大的CompletableFuture，那么利用get()方法就可以阻塞。
+
+```
+public class CompletableFutureParallel {
+    private static final int CORE_POOL_SIZE = 4;
+    private static final int MAX_POOL_SIZE = 12;
+    private static final long KEEP_ALIVE_TIME = 5L;
+    private final static int QUEUE_SIZE = 1600;
+
+    protected final static ExecutorService THREAD_POOL = new ThreadPoolExecutor(CORE_POOL_SIZE, MAX_POOL_SIZE,
+            KEEP_ALIVE_TIME, TimeUnit.SECONDS, new LinkedBlockingQueue<>(QUEUE_SIZE));
+    public static void main(String[] args) throws InterruptedException, ExecutionException, TimeoutException {
+        OrderInfo orderInfo = new OrderInfo();
+        //CompletableFuture 的List
+        List<CompletableFuture> futures = new ArrayList<>();
+        futures.add(CompletableFuture.runAsync(() -> {
+            System.out.println("当前任务Customer,线程名字为:" + Thread.currentThread().getName());
+            orderInfo.setCustomerInfo(new CustomerInfo());
+        }, THREAD_POOL));
+        futures.add(CompletableFuture.runAsync(() -> {
+            System.out.println("当前任务Discount,线程名字为:" + Thread.currentThread().getName());
+            orderInfo.setDiscountInfo(new DiscountInfo());
+        }, THREAD_POOL));
+        futures.add( CompletableFuture.runAsync(() -> {
+            System.out.println("当前任务Food,线程名字为:" + Thread.currentThread().getName());
+            orderInfo.setFoodListInfo(new FoodListInfo());
+        }, THREAD_POOL));
+        futures.add(CompletableFuture.runAsync(() -> {
+            System.out.println("当前任务Other,线程名字为:" + Thread.currentThread().getName());
+            orderInfo.setOtherInfo(new OtherInfo());
+        }, THREAD_POOL));
+        CompletableFuture allDoneFuture = CompletableFuture.allOf(futures.toArray(new CompletableFuture[futures.size()]));
+        allDoneFuture.get(10, TimeUnit.SECONDS);
+        System.out.println(orderInfo);
+    }
+}
+```
+
+可以看见我们使用CompletableFuture能很快的完成的需求，当然这还不够。
+
+# 3.3 Fork/Join
+我们上面用CompletableFuture完成了我们对多组任务并行执行，但是其依然是依赖我们的线程池，在我们的线程池中使用的是阻塞队列，也就是当我们某个线程执行完任务的时候需要通过这个阻塞队列进行，那么肯定会发生竞争，所以在JDK1.7中提供了ForkJoinTask和ForkJoinPool。
+
+![](https://user-gold-cdn.xitu.io/2018/9/11/165c91a991b0fbad?w=1300&h=728&f=png&s=278098)
+
+ForkJoinPool中每个线程都有自己的工作队列，并且采用Work-Steal算法防止线程饥饿。 Worker线程用LIFO的方法取出任务，但是会用FIFO的方法去偷取别人队列的任务，这样就减少了锁的冲突。
+
+![](https://user-gold-cdn.xitu.io/2018/9/11/165c91cd86371806?w=414&h=358&f=png&s=69169)
+网上这个框架的例子很多，我们看看如何使用代码其完成我们上面的下订单需求:
+
+```
+public class OrderTask extends RecursiveTask<OrderInfo> {
+    @Override
+    protected OrderInfo compute() {
+        System.out.println("执行"+ this.getClass().getSimpleName() + "线程名字为:" + Thread.currentThread().getName());
+        // 定义其他五种并行TasK
+        CustomerTask customerTask = new CustomerTask();
+        TenantTask tenantTask = new TenantTask();
+        DiscountTask discountTask = new DiscountTask();
+        FoodTask foodTask = new FoodTask();
+        OtherTask otherTask = new OtherTask();
+        invokeAll(customerTask, tenantTask, discountTask, foodTask, otherTask);
+        OrderInfo orderInfo = new OrderInfo(customerTask.join(), tenantTask.join(), discountTask.join(), foodTask.join(), otherTask.join());
+        return orderInfo;
+    }
+    public static void main(String[] args) {
+        ForkJoinPool forkJoinPool = new ForkJoinPool(Runtime.getRuntime().availableProcessors() -1 );
+        System.out.println(forkJoinPool.invoke(new OrderTask()));
+    }
+}
+class CustomerTask extends RecursiveTask<CustomerInfo>{
+
+    @Override
+    protected CustomerInfo compute() {
+        System.out.println("执行"+ this.getClass().getSimpleName() + "线程名字为:" + Thread.currentThread().getName());
+        return new CustomerInfo();
+    }
+}
+class TenantTask extends RecursiveTask<TenantInfo>{
+
+    @Override
+    protected TenantInfo compute() {
+        System.out.println("执行"+ this.getClass().getSimpleName() + "线程名字为:" + Thread.currentThread().getName());
+        return new TenantInfo();
+    }
+}
+class DiscountTask extends RecursiveTask<DiscountInfo>{
+
+    @Override
+    protected DiscountInfo compute() {
+        System.out.println("执行"+ this.getClass().getSimpleName() + "线程名字为:" + Thread.currentThread().getName());
+        return new DiscountInfo();
+    }
+}
+class FoodTask extends RecursiveTask<FoodListInfo>{
+
+    @Override
+    protected FoodListInfo compute() {
+        System.out.println("执行"+ this.getClass().getSimpleName() + "线程名字为:" + Thread.currentThread().getName());
+        return new FoodListInfo();
+    }
+}
+class OtherTask extends RecursiveTask<OtherInfo>{
+
+    @Override
+    protected OtherInfo compute() {
+        System.out.println("执行"+ this.getClass().getSimpleName() + "线程名字为:" + Thread.currentThread().getName());
+        return new OtherInfo();
+    }
+}
+```
+我们定义一个OrderTask并且定义五个获取信息的任务，在compute中分别fork执行这五个任务，最后在将这五个任务的结果通过Join获得，最后完成我们的并行化的需求。
+
+## 3.4 parallelStream
+在jdk1.8中提供了并行流的API，当我们使用集合的时候能很好的进行并行处理,下面举了一个简单的例子从1加到100:
+
+```
+public class ParallelStream {
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for (int i = 1; i <= 100; i++) {
+            list.add(i);
+        }
+        LongAdder sum = new LongAdder();
+        list.parallelStream().forEach(integer -> {
+//            System.out.println("当前线程" + Thread.currentThread().getName());
+            sum.add(integer);
+        });
+        System.out.println(sum);
+    }
+}
+```
+parallelStream中底层使用的那一套也是Fork/Join的那一套，默认的并发程度是可用CPU数-1。
+
+
+## 3.5 分片
+可以想象有这么一个需求，每天定时对id在某个范围之间的用户发券，比如这个范围之间的用户有几百万，如果给一台机器发的话，可能全部发完需要很久的时间，所以分布式调度框架比如:elastic-job。都提供了分片的功能，比如你用50台机器，那么id%50=0的在第0台机器上，=1的在第1台机器上发券，那么我们的执行时间其实就分摊到了不同的机器上了。
+
+# 4.并行化注意事项
+- 线程安全:在parallelStream中我们列举的代码中使用的是LongAdder，并没有直接使用我们的Integer和Long，这个是因为在多线程环境下Integer和Long线程不安全。所以线程安全我们需要特别注意。
+- 合理参数配置:可以看见我们需要配置的参数比较多，比如我们的线程池的大小，等待队列大小，并行度大小以及我们的等待超时时间等等，我们都需要根据自己的业务不断的调优防止出现队列不够用或者超时时间不合理等等。
+
+# 5.最后
+本文介绍了什么是并行化，并行化的各种历史，在Java中如何实现并行化，以及并行化的注意事项。希望大家对并行化有个比较全面的认识。最后给大家提个两个小问题:
+1. 在我们并行化当中有某个任务如果某个任务出现了异常应该怎么办?
+2. 在我们并行化当中有某个任务的信息并不是强依赖，也就是如果出现了问题这部分信息我们也可以不需要，当并行化的时候，这种任务出现了异常应该怎么办?
+
+最后打个广告，如果你觉得这篇文章对你有文章，可以关注我的技术公众号
+
+![](https://user-gold-cdn.xitu.io/2018/7/22/164c2ad786c7cfe4?w=500&h=375&f=jpeg&s=215163)
+
+
