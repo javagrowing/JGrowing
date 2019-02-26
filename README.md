@@ -18,8 +18,8 @@ JGrowing不是属于某个人的项目，而是属于组织项目。我的想法
 ### 1.2计算机网络
 ### 1.3数据库
 ## 2. 数据结构和算法
-### 数据结构
-### 算法
+### 2.1数据结构
+### 2.2算法
 ## 3. [Java基础](https://github.com/javagrowing/JGrowing/tree/master/Java%E5%9F%BA%E7%A1%80)
 ### 3.1Java特性
 ### 3.2基本程序设计
