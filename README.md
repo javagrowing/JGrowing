@@ -37,6 +37,7 @@ JGrowing不是属于某个人的项目，而是属于组织项目。我的想法
 ### 领域驱动设计
 ## 5. [常用框架](https://github.com/javagrowing/JGrowing/tree/master/%E5%B8%B8%E7%94%A8%E6%A1%86%E6%9E%B6)
 ### 5.1Spring全家桶
+- [聊聊Spring的那些扩展机制]:(https://github.com/javagrowing/JGrowing/blob/master/%E5%B8%B8%E7%94%A8%E6%A1%86%E6%9E%B6/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/Spring/%E8%81%8A%E8%81%8Aspring%E7%9A%84%E9%82%A3%E4%BA%9B%E6%89%A9%E5%B1%95%E6%9C%BA%E5%88%B6.md)
 ### 5.2ORM框架
 ### 5.3常用工具包
 
@@ -45,13 +46,16 @@ JGrowing不是属于某个人的项目，而是属于组织项目。我的想法
 ### 数据库连接池
 ### 其他框架
 - [无锁队列Disruptor](https://github.com/javagrowing/JGrowing/blob/master/%E5%B8%B8%E7%94%A8%E6%A1%86%E6%9E%B6/%E5%85%B6%E4%BB%96%E6%A1%86%E6%9E%B6/%E6%97%A0%E9%94%81%E9%98%9F%E5%88%97Disruptor.md)
+- [深入解密来自未来的缓存-caffeine](https://github.com/javagrowing/JGrowing/blob/master/%E5%B8%B8%E7%94%A8%E6%A1%86%E6%9E%B6/%E5%85%B6%E4%BB%96%E6%A1%86%E6%9E%B6/%E6%B7%B1%E5%85%A5%E8%A7%A3%E5%AF%86%E6%9D%A5%E8%87%AA%E6%9C%AA%E6%9D%A5%E7%9A%84%E7%BC%93%E5%AD%98-Caffeine.md)
 ## 6. [服务端开发](https://github.com/javagrowing/JGrowing/tree/master/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BC%80%E5%8F%91)
+- [浅析如何设计一个亿级网关](https://github.com/javagrowing/JGrowing/blob/master/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BC%80%E5%8F%91/%E6%B5%85%E6%9E%90%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E4%BA%BF%E7%BA%A7%E7%BD%91%E5%85%B3.md)
 ### 6.1服务监控
 ### 6.2服务器
 ### 6.3服务防护
 ### 6.4容器云
 ### 6.5服务优化
 - [异步化，你的高并发大杀器](https://github.com/javagrowing/JGrowing/blob/master/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BC%80%E5%8F%91/%E6%9C%8D%E5%8A%A1%E4%BC%98%E5%8C%96/%E5%BC%82%E6%AD%A5%E5%8C%96%EF%BC%8C%E4%BD%A0%E7%9A%84%E9%AB%98%E5%B9%B6%E5%8F%91%E5%A4%A7%E6%9D%80%E5%99%A8.md)
+- [并行化-你的高并发大杀器](https://github.com/javagrowing/JGrowing/blob/master/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BC%80%E5%8F%91/%E6%9C%8D%E5%8A%A1%E4%BC%98%E5%8C%96/%E5%B9%B6%E8%A1%8C%E5%8C%96-%E4%BD%A0%E7%9A%84%E9%AB%98%E5%B9%B6%E5%8F%91%E5%A4%A7%E6%9D%80%E5%99%A8.md)
 - [你应该知道的缓存进化史](https://github.com/javagrowing/JGrowing/blob/master/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BC%80%E5%8F%91/%E6%9C%8D%E5%8A%A1%E4%BC%98%E5%8C%96/%E4%BD%A0%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E7%9A%84%E7%BC%93%E5%AD%98%E8%BF%9B%E5%8C%96%E5%8F%B2.md)
 - [如何优雅的设计和使用缓存？](https://github.com/javagrowing/JGrowing/blob/master/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BC%80%E5%8F%91/%E6%9C%8D%E5%8A%A1%E4%BC%98%E5%8C%96/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E4%BD%BF%E7%94%A8%E7%BC%93%E5%AD%98%EF%BC%9F.md)
 ## 7. 分布式
@@ -59,13 +63,16 @@ JGrowing不是属于某个人的项目，而是属于组织项目。我的想法
 - [你应该知道的kafka](https://github.com/javagrowing/JGrowing/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/%E4%BD%A0%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E7%9A%84kafka.md)
 - [再有人问你分布式事务，这篇文章扔给他](https://github.com/javagrowing/JGrowing/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/%E5%86%8D%E6%9C%89%E4%BA%BA%E9%97%AE%E4%BD%A0%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%EF%BC%8C%E8%BF%99%E7%AF%87%E6%96%87%E7%AB%A0%E6%89%94%E7%BB%99%E4%BB%96.md)
 []
-- [谈谈数据一致性]()
+- [如果再有人问你分布式ID，这篇文章扔给他](https://github.com/javagrowing/JGrowing/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%A6%82%E6%9E%9C%E5%86%8D%E6%9C%89%E4%BA%BA%E9%97%AE%E4%BD%A0%E5%88%86%E5%B8%83%E5%BC%8F%20ID%EF%BC%8C%E8%BF%99%E7%AF%87%E6%96%87%E7%AB%A0%E4%B8%A2%E7%BB%99%E4%BB%96.md)
+- [如果再有人问你分布式锁,这篇文章扔给他](https://github.com/javagrowing/JGrowing/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%86%8D%E6%9C%89%E4%BA%BA%E9%97%AE%E4%BD%A0%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%EF%BC%8C%E8%BF%99%E7%AF%87%E6%96%87%E7%AB%A0%E6%89%94%E7%BB%99%E4%BB%96.md)
+- [谈谈数据一致性](https://github.com/javagrowing/JGrowing/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/%E8%B0%88%E8%B0%88%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7.md)
 ### 7.2批处理系统
 ### 7.3流处理系统
 ### 7.4搜索引擎
 ## 8. CaseStudy
 前车之鉴，后事之师。
 ### 如何排查问题
+- [解密阿里线上问题诊断工具Arthas和jvm-sandbox](https://github.com/javagrowing/JGrowing/blob/master/CaseStudy/%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7/%E8%A7%A3%E5%AF%86%E9%98%BF%E9%87%8C%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7Arthas%E5%92%8Cjvm-sandbox)
 ### 常见问题案例
 
 额外的一些:
