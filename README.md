@@ -52,6 +52,8 @@ JGrowing不是属于某个人的项目，而是属于组织项目。我的想法
 ### 6.4容器云
 ### 6.5服务优化
 [异步化，你的高并发大杀器](https://github.com/javagrowing/JGrowing/blob/master/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BC%80%E5%8F%91/%E6%9C%8D%E5%8A%A1%E4%BC%98%E5%8C%96/%E5%BC%82%E6%AD%A5%E5%8C%96%EF%BC%8C%E4%BD%A0%E7%9A%84%E9%AB%98%E5%B9%B6%E5%8F%91%E5%A4%A7%E6%9D%80%E5%99%A8.md)
+[你应该知道的缓存进化史](https://github.com/javagrowing/JGrowing/blob/master/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BC%80%E5%8F%91/%E6%9C%8D%E5%8A%A1%E4%BC%98%E5%8C%96/%E4%BD%A0%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E7%9A%84%E7%BC%93%E5%AD%98%E8%BF%9B%E5%8C%96%E5%8F%B2.md)
+[如何优雅的设计和使用缓存？]（https://github.com/javagrowing/JGrowing/blob/master/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BC%80%E5%8F%91/%E6%9C%8D%E5%8A%A1%E4%BC%98%E5%8C%96/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E4%BD%BF%E7%94%A8%E7%BC%93%E5%AD%98%EF%BC%9F.md）
 ## 7. 分布式
 ### 7.1中间件
 [你应该知道的kafka](https://github.com/javagrowing/JGrowing/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/%E4%BD%A0%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E7%9A%84kafka.md)
