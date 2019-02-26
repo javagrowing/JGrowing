@@ -11,49 +11,51 @@ JGrowing不是属于某个人的项目，而是属于组织项目。我的想法
 ![脑图](https://github.com/javagrowing/JGrowing/blob/master/JGrade.png)
 
 学习Java可以按照下面的顺序来学习，当然你也可以查漏补缺查看自己感兴趣的部分:
-### 1. [计算机基础](https://github.com/javagrowing/JGrowing/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80)
+## 1. [计算机基础](https://github.com/javagrowing/JGrowing/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80)
 这部分和语言无关，苦练基本功，为以后做好准备。
-#### 操作系统
-#### 计算机网络
-#### 数据库
-### 2. 数据结构和算法
-#### 数据结构
-#### 算法
-### 3. Java基础
-#### Java特性
-#### 基本程序设计
-#### Java并发编程
-#### JVM
-### 4. 分析设计
-#### 设计原则
-#### 设计模式
-#### 领域驱动设计
-### 5. 常用框架
-#### Spring全家桶
-#### ORM框架
-#### 常用工具包
-#### 日志框架
-#### 数据库连接池
-#### 其他框架
-### 6. 服务端开发
-#### 服务监控
-#### 服务器
-#### 服务防护
-#### 容器云
-### 7. 分布式
-#### 中间件
-#### 批处理系统
-#### 流处理系统
-#### 搜索引擎
-### 8. CaseStudy
+### 1.1[操作系统](https://github.com/javagrowing/JGrowing/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F)
+[走进科学之神秘的零拷贝](https://github.com/javagrowing/JGrowing/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/IO/%E8%B5%B0%E8%BF%9B%E7%A7%91%E5%AD%A6%E4%B9%8B%E6%8F%AD%E5%BC%80%E7%A5%9E%E7%A7%98%E7%9A%84%22%E9%9B%B6%E6%8B%B7%E8%B4%9D%22.md)
+### 1.2计算机网络
+### 1.3数据库
+## 2. 数据结构和算法
+### 数据结构
+### 算法
+## 3. Java基础
+### Java特性
+### 基本程序设计
+### Java并发编程
+### JVM
+## 4. [分析设计](https://github.com/javagrowing/JGrowing/tree/master/%E5%88%86%E6%9E%90%E8%AE%BE%E8%AE%A1)
+### 设计原则
+### 设计模式
+### 领域驱动设计
+## 5. [常用框架](https://github.com/javagrowing/JGrowing/tree/master/%E5%B8%B8%E7%94%A8%E6%A1%86%E6%9E%B6)
+### 5.1Spring全家桶
+### 5.2ORM框架
+### 5.3常用工具包
+### 5.4[日志框架](https://github.com/javagrowing/JGrowing/tree/master/%E5%B8%B8%E7%94%A8%E6%A1%86%E6%9E%B6/%E6%97%A5%E5%BF%97%E6%A1%86%E6%9E%B6)
+[如何编写Log4j2脱敏插件](https://github.com/javagrowing/JGrowing/blob/master/%E5%B8%B8%E7%94%A8%E6%A1%86%E6%9E%B6/%E6%97%A5%E5%BF%97%E6%A1%86%E6%9E%B6/Log4j2/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99Log4j2%E8%84%B1%E6%95%8F%E6%8F%92%E4%BB%B6.md)
+### 数据库连接池
+### 其他框架
+## 6. 服务端开发
+### 服务监控
+### 服务器
+### 服务防护
+### 容器云
+## 7. 分布式
+### 中间件
+### 批处理系统
+### 流处理系统
+### 搜索引擎
+## 8. CaseStudy
 前车之鉴，后事之师。
-#### 如何排查问题
-#### 常见问题案例
+### 如何排查问题
+### 常见问题案例
 
 额外的一些:
-### 基础工具:
-### 面试经验：
-### 扩展阅读：
+## 基础工具:
+## 面试经验：
+## 扩展阅读：
 
 ## 你的参与
 JGrowing中大部分文章目前都没有写，希望你能参与进来一起，怎么做？
