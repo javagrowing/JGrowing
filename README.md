@@ -75,6 +75,7 @@ JGrowing不是属于某个人的项目，而是属于组织项目。我的想法
 - [解密阿里线上问题诊断工具Arthas和jvm-sandbox](https://github.com/javagrowing/JGrowing/blob/master/CaseStudy/%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7/%E8%A7%A3%E5%AF%86%E9%98%BF%E9%87%8C%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7Arthas%E5%92%8Cjvm-sandbox)
 ### 常见问题案例
 - [记一次神奇的Mysql死锁排查](https://github.com/javagrowing/JGrowing/blob/master/CaseStudy/%E6%8E%92%E6%9F%A5%E6%A1%88%E4%BE%8B/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A5%9E%E5%A5%87%E7%9A%84Mysql%E6%AD%BB%E9%94%81%E6%8E%92%E6%9F%A5.md)
+
 额外的一些:
 ## 基础工具:
 ## [面试经验](https://github.com/javagrowing/JGrowing/tree/master/%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C)：
