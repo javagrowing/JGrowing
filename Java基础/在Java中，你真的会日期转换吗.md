@@ -17,7 +17,7 @@ simpleDateFormat的使用方法比较简单:
 ```
 public static void main(String[] args) throws Exception {
 
- SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-mm-dd  HH:mm:ss");
+ SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss");
 
  System.out.println(simpleDateFormat.format(new Date()));
 
