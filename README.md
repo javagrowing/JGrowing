@@ -1,5 +1,5 @@
 # JGrowing
-Java is Growing up but not only Java。Java成长路线，但不仅仅是Java，其他程序员依然适合。
+Java is Growing up but not only Java。Java成长路线，但学到的不仅仅是JAVA。
 
 ## 缘起
 时常有一些朋友问起一个Java程序员到底应该怎么学习？公司的项目对自己没啥帮助，到底应该怎么提升？这些问题想必对很多人都是一个通病，包括我自己也是。所以我对于这些问题通常只能基于自己的眼界进行答复，也不知道这些东西对于他们是否有效。
