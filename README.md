@@ -16,7 +16,7 @@ JGrowing不是属于某个人的项目，而是属于组织项目。我的想法
 ## 1. [计算机基础](https://github.com/javagrowing/JGrowing/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80)
 这部分和语言无关，苦练基本功，为以后做好准备。
 ### 1.1[操作系统](https://github.com/javagrowing/JGrowing/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F)
-- [走进科学之神秘的零拷贝](https://github.com/javagrowing/JGrowing/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/IO/%E8%B5%B0%E8%BF%9B%E7%A7%91%E5%AD%A6%E4%B9%8B%E6%8F%AD%E5%BC%80%E7%A5%9E%E7%A7%98%E7%9A%84%22%E9%9B%B6%E6%8B%B7%E8%B4%9D%22.md)
+- [走进科学之神秘的零拷贝](https://github.com/javagrowing/JGrowing/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/IO/%E8%B5%B0%E8%BF%9B%E7%A7%91%E5%AD%A6%E4%B9%8B%E6%8F%AD%E5%BC%80%E7%A5%9E%E7%A7%98%E7%9A%84%E9%9B%B6%E6%8B%B7%E8%B4%9D.md)
 ### 1.2计算机网络
 ### 1.3数据库
 - [为什么开发人员必须了解数据库锁](https://github.com/javagrowing/JGrowing/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%BF%85%E9%A1%BB%E8%A6%81%E4%BA%86%E8%A7%A3%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%81%EF%BC%9F.md)
