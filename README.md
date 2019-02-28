@@ -93,7 +93,7 @@ JGrowing不是属于某个人的项目，而是属于组织项目。我的想法
 
 ## 你的参与
 JGrowing中大部分文章目前都没有写，希望你能参与进来一起，怎么做？
-- 联系我，加入JavaGrowing组织，https://github.com/javagrowing
+- 联系我，加入JavaGrowing组织，参考此[issue](https://github.com/javagrowing/JGrowing/issues/5)。
 - 选出一个你感兴趣的主题，进行原创，当然如果你发现了一些很优秀的文章（能联系上作者的），联系作者进行转载。
 - 对学习路线有什么建议，或者有什么不对的地方提出PR进行修改。
 
