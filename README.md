@@ -1,4 +1,4 @@
-[![license](https://badgen.net/badge/license/Attribution-NonCommercial%204.0/green)](https://github.com/javagrowing/JGrowing/blob/master/LICENSE)
+[![license](https://badgen.net/badge/license/MIT/blue)](https://github.com/javagrowing/JGrowing/blob/master/LICENSE)
 [![stars](https://badgen.net/github/stars/javagrowing/JGrowing)](https://github.com/javagrowing/JGrowing/stargazers)
 [![forks](https://badgen.net/github/forks/javagrowing/JGrowing)](https://github.com/javagrowing/JGrowing/network/members)
 [![help-wanted](https://badgen.net/github/label-issues/javagrowing/JGrowing/help%20wanted/open)](https://github.com/javagrowing/JGrowing/labels/help%20wanted)
