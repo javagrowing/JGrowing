@@ -1,3 +1,10 @@
+[![license](https://badgen.net/badge/license/Attribution-NonCommercial%204.0/green)](https://github.com/javagrowing/JGrowing/blob/master/LICENSE)
+[![stars](https://badgen.net/github/stars/javagrowing/JGrowing)](https://github.com/javagrowing/JGrowing/stargazers)
+[![forks](https://badgen.net/github/forks/javagrowing/JGrowing)](https://github.com/javagrowing/JGrowing/network/members)
+[![help-wanted](https://badgen.net/github/label-issues/javagrowing/JGrowing/help%20wanted/open)](https://github.com/javagrowing/JGrowing/labels/help%20wanted)
+[![issues](https://badgen.net/github/open-issues/javagrowing/JGrowing)](https://github.com/javagrowing/JGrowing/issues)
+[![PRs Welcome](https://badgen.net/badge/PRs/welcome/green)](http://makeapullrequest.com)
+
 # JGrowing
 Java is Growing up but not only Java。Java成长路线，但学到的不仅仅是JAVA。
 ## 维护人员（排名不分先后）
