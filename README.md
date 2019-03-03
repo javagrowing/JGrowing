@@ -32,6 +32,7 @@ JGrowing不是属于某个人的项目，而是属于组织项目。我的想法
 ### 2.2算法
 ## 3. [Java基础](https://github.com/javagrowing/JGrowing/tree/master/Java%E5%9F%BA%E7%A1%80)
 - [在Java中，你真的会日期转换吗](https://github.com/javagrowing/JGrowing/blob/master/Java%E5%9F%BA%E7%A1%80/%E5%9C%A8Java%E4%B8%AD%EF%BC%8C%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E6%97%A5%E6%9C%9F%E8%BD%AC%E6%8D%A2%E5%90%97.md)
+- [聊聊ThreadlLocal和引用的那些事](https://github.com/javagrowing/JGrowing/blob/master/Java%E5%9F%BA%E7%A1%80/%E8%81%8A%E8%81%8A%E5%BC%95%E7%94%A8%E5%92%8CThreadlocal%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B.md)
 ### 3.1Java特性
 ### 3.2基本程序设计
 ### 3.3Java并发编程
