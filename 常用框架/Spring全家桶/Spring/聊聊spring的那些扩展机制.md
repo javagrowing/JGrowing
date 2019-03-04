@@ -88,7 +88,7 @@ url=jdbc:mysql://localhost:3306/test
 username=root
 password=123456
 ```
-对于这种配置自己玩玩已经满足，但是在公司有个问题，密码放在项目中明码存储，这样是不行的，别人只要获得了你项目的查看权限那么密码就会被泄漏，所以一般的公司会有一个统一的密码存储服务，只有足够的权限才能够使用，那么我们可以把密码放在统一存储服务中，通过对服务的调用才能进行密码的使用,那么我们怎么把从远程服务中获取到的密码注入到我们Bean中呢？那么就要使用我们的BeanFactoryPostpRrocessor，下面的代码继承PropertyPlaceholderConfigurer(BeanFactoryPostpRrocessor的实现类)：
+对于这种配置自己玩玩已经满足，但是在公司有个问题，密码放在项目中明码存储，这样是不行的，别人只要获得了你项目的查看权限那么密码就会被泄漏，所以一般的公司会有一个统一的密码存储服务，只有足够的权限才能够使用，那么我们可以把密码放在统一存储服务中，通过对服务的调用才能进行密码的使用,那么我们怎么把从远程服务中获取到的密码注入到我们Bean中呢？那么就要使用我们的 BeanFactoryPostProcessor，下面的代码继承PropertyPlaceholderConfigurer(BeanFactoryPostProcessor 的实现类)：
 
 ![](https://user-gold-cdn.xitu.io/2018/9/20/165f509420954038?w=1830&h=1008&f=png&s=244572)
 
@@ -123,7 +123,7 @@ Spring提供了很多Aware接口用于进行扩展，通过Aware我们可以设�
 
 invokeAwareMethod提供了三种最基本的Aware,如果是ApplicationContext的话那么在ApplicationContextAwareProcessor又进行了一轮Aware注入。
 
-- BeanNameAware:如果Spring检测到当前对象实现了该接口，会将该对象实例的beanName设置到对钱对象实例中。
+- BeanNameAware:如果Spring检测到当前对象实现了该接口，会将该对象实例的beanName设置到当前对象实例中。
 - BeanClassLoaderAware:会将加载当前Bean的ClassLoader注入进去。
 - BeanFactoryAware:将当前BeanFactory容器注入进去。
 
