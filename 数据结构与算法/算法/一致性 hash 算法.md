@@ -1,3 +1,5 @@
+![](https://ws1.sinaimg.cn/large/006tKfTcly1g0m9w97ajwj31hc0u0qjc.jpg)
+
 # 前言
 
 本文主要分为两部分：
