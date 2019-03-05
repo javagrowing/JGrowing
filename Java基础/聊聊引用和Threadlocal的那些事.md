@@ -1,5 +1,5 @@
 # 1 背景
-某一天在某一个群里面的某个群友突然提出了一个问题:"threadlocal的key是虚引用，那么在threadlocal.get()的时候,发生GC之后，key是否是null？"屏幕前的你可以好好的想想这个问题，在这里我先卖个关子，先讲讲Java中引用和ThreadLocal的那些事。
+某一天在某一个群里面的某个群友突然提出了一个问题:"threadlocal的key是弱引用，那么在threadlocal.get()的时候,发生GC之后，key是否是null？"屏幕前的你可以好好的想想这个问题，在这里我先卖个关子，先讲讲Java中引用和ThreadLocal的那些事。
 # 2 Java中的引用
 对于很多Java初学者来说，会把引用和对象给搞混淆。下面有一段代码，
 
@@ -65,7 +65,7 @@ public static void main(String[] args) {
     通过堆内存不足触发GC:java.lang.ref.SoftReference@4b85612c
 ```
 通过-Xmx10m设置我们堆内存大小为10，方便构造堆内存不足的情况。可以看见我们输出的情况我们手动调用System.gc并没有回收我们的软引用所指向的对象，只有在内存不足的情况下才能触发。
-#### 2.2.2软应用的应用
+#### 2.2.2软引用的应用
 在SoftReference的doc中有这么一句话:
 > Soft references are most often used to implement memory-sensitive caches
 
@@ -88,7 +88,7 @@ public static void main(String[] args)  {
 在WeakReference的注释中写到:
 >Weak references are most often used to implement canonicalizing mappings.
 
-从中可以知道虚引用更多的是用来实现canonicalizing mappings(规范化映射)。在JDK中WeakHashMap很好的体现了这个例子:
+从中可以知道弱引用更多的是用来实现canonicalizing mappings(规范化映射)。在JDK中WeakHashMap很好的体现了这个例子:
 
 ```
 public static void main(String[] args) throws Exception {
@@ -107,7 +107,7 @@ public static void main(String[] args) throws Exception {
 有强引用的时候:map大小1
 无强引用的时候:map大小0
 ```
-可以看出在GC之后我们在map中的键值对就被回收了，在weakHashMap中其实只有Key是虚引用做关联的，然后通过引用队列再去对我们的map进行回收处理。
+可以看出在GC之后我们在map中的键值对就被回收了，在weakHashMap中其实只有Key是弱引用做关联的，然后通过引用队列再去对我们的map进行回收处理。
 
 ## 2.4 虚引用
 虚引用是最弱的引用，在Java中使用PhantomReference进行定义。弱到什么地步呢？也就是你定义了虚引用根本无法通过虚引用获取到这个对象，更别谈影响这个对象的生命周期了。在虚引用中唯一的作用就是用队列接收对象即将死亡的通知。
@@ -160,10 +160,10 @@ ThreadLocalMap本质上也是个Map,其中Key是我们的ThreadLocal这个对象
             }
         }
 ```
-可以看见Entry是WeakReference的子类，而这个虚引用所关联的对象正是我们的ThreadLocal这个对象。我们又回到上面的问题:
->"threadlocal的key是虚引用，那么在threadlocal.get()的时候,发生GC之后，key是否是null？"
+可以看见Entry是WeakReference的子类，而这个弱引用所关联的对象正是我们的ThreadLocal这个对象。我们又回到上面的问题:
+>"threadlocal的key是弱引用，那么在threadlocal.get()的时候,发生GC之后，key是否是null？"
 
-这个问题晃眼一看，虚引用嘛，还有垃圾回收那肯定是为null，这其实是不对的，因为题目说的是在做threadlocal.get()操作，证明其实还是有强引用存在的。所以key并不为null。如果我们的强引用不存在的话，那么Key就会被回收，也就是会出现我们value没被回收，key被回收，导致value永远存在，出现内存泄漏。这也是ThreadLocal经常会被很多书籍提醒到需要remove()的原因。
+这个问题晃眼一看，弱引用嘛，还有垃圾回收那肯定是为null，这其实是不对的，因为题目说的是在做threadlocal.get()操作，证明其实还是有强引用存在的。所以key并不为null。如果我们的强引用不存在的话，那么Key就会被回收，也就是会出现我们value没被回收，key被回收，导致value永远存在，出现内存泄漏。这也是ThreadLocal经常会被很多书籍提醒到需要remove()的原因。
 
 你也许会问看到很多源码的ThreadLocal并没有写remove依然再用得很好呢？那其实是因为很多源码经常是作为静态变量存在的生命周期和Class是一样的，而remove需要再那些方法或者对象里面使用ThreadLocal，因为方法栈或者对象的销毁从而强引用丢失，导致内存泄漏。
 
@@ -175,4 +175,11 @@ FastThreadLocal有下面几个特点:
 - 由于使用数组，不会出现Key回收，value没被回收的尴尬局面，所以避免了内存泄漏。
 
 # 总结
-文章开头的问题，为什么会被问出来，其实是对虚引用和ThreadLocal理解不深导致，很多时候只记着一个如果是虚引用，在垃圾回收时就会被回收，就会导致把这个观念先入为主，没有做更多的分析思考。所以大家再分析一个问题的时候还是需要更多的站在不同的场景上做更多的思考。
+文章开头的问题，为什么会被问出来，其实是对弱引用和ThreadLocal理解不深导致，很多时候只记着一个如果是弱引用，在垃圾回收时就会被回收，就会导致把这个观念先入为主，没有做更多的分析思考。所以大家再分析一个问题的时候还是需要更多的站在不同的场景上做更多的思考。
+
+最后这篇文章被我收录于JGrowing-Java基础篇，一个全面，优秀，由社区一起共建的Java学习路线，如果您想参与开源项目的维护，可以一起共建，github地址为:https://github.com/javagrowing/JGrowing 
+麻烦给个小星星哟。
+
+> 如果大家觉得这篇文章对你有帮助，你的关注和转发是对我最大的支持，O(∩_∩)O:
+
+![](https://user-gold-cdn.xitu.io/2018/7/22/164c2ad786c7cfe4?w=500&h=375&f=jpeg&s=215163)
