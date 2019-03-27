@@ -141,3 +141,6 @@ TM的核心过程主要是这5步，其他详细的讲解会在后续的代码�
 > 如果大家觉得这篇文章对你有帮助，你的关注和转发是对我最大的支持，O(∩_∩)O:
 
 ![](https://user-gold-cdn.xitu.io/2018/7/22/164c2ad786c7cfe4?w=500&h=375&f=jpeg&s=215163)
+
+# 参考文章
+阿里开源分布式事务解决方案Fescar: https://mp.weixin.qq.com/s/TFGRcHV6EgeLB45OEJPRXw
