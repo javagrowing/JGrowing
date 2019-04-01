@@ -8,7 +8,7 @@
 # JGrowing
 Java is Growing up but not only Java。Java成长路线，但学到的不仅仅是JAVA。
 ## 维护人员（排名不分先后）
-@[林大塔](https://github.com/data-lin), @[lzx2005](https://github.com/lzx2005),@[TGhoul](https://github.com/TGhoul),@[crossoverJie](https://github.com/crossoverJie),@[zhangyd-c](https://github.com/zhangyd-c)，@[ygmyth](https://github.com/ygmyth)，@[kinglaw1204](https://github.com/kinglaw1204)
+@[林大塔](https://github.com/data-lin), @[lzx2005](https://github.com/lzx2005),@[TGhoul](https://github.com/TGhoul),@[crossoverJie](https://github.com/crossoverJie),@[zhangyd-c](https://github.com/zhangyd-c)，@[ygmyth](https://github.com/ygmyth)，@[kinglaw1204](https://github.com/kinglaw1204),@[easepan](https://github.com//easepan)
 
 ## 缘起
 时常有一些朋友问起一个Java程序员到底应该怎么学习？公司的项目对自己没啥帮助，到底应该怎么提升？这些问题想必对很多人都是一个通病，包括我自己也是。所以我对于这些问题通常只能基于自己的眼界进行答复，也不知道这些东西对于他们是否有效。
