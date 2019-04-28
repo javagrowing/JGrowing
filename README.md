@@ -37,6 +37,7 @@ JGrowing不是属于某个人的项目，而是属于组织项目。我的想法
 ### 3.2基本程序设计
 ### 3.3Java并发编程
 - [异步技巧之CompletableFuture](https://github.com/javagrowing/JGrowing/blob/master/Java%E5%9F%BA%E7%A1%80/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E6%A0%B8%E5%BF%83%E5%B7%A5%E5%85%B7/%E5%BC%82%E6%AD%A5%E6%8A%80%E5%B7%A7%E4%B9%8BCompletableFuture.md)
+- [你应该知道的乐观锁-高效控制线程安全的手段](https://github.com/javagrowing/JGrowing/blob/master/Java%E5%9F%BA%E7%A1%80/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E6%A0%B8%E5%BF%83%E5%B7%A5%E5%85%B7/%E4%BD%A0%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E7%9A%84%E4%B9%90%E8%A7%82%E9%94%81-%E9%AB%98%E6%95%88%E6%8E%A7%E5%88%B6%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E6%89%8B%E6%AE%B5.md)
 ### 3.4JVM
 - [jvm内存区域详解](https://github.com/javagrowing/JGrowing/blob/master/Java%E5%9F%BA%E7%A1%80/JVM/JVM%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E8%AF%A6%E8%A7%A3.md)
 ## 4. [分析设计](https://github.com/javagrowing/JGrowing/tree/master/%E5%88%86%E6%9E%90%E8%AE%BE%E8%AE%A1)
