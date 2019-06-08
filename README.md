@@ -33,8 +33,7 @@ JGrowing不是属于某个人的项目，而是属于组织项目。我的想法
 ## 3. [Java基础](https://github.com/javagrowing/JGrowing/tree/master/Java%E5%9F%BA%E7%A1%80)
 - [在Java中，你真的会日期转换吗](https://github.com/javagrowing/JGrowing/blob/master/Java%E5%9F%BA%E7%A1%80/%E5%9C%A8Java%E4%B8%AD%EF%BC%8C%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E6%97%A5%E6%9C%9F%E8%BD%AC%E6%8D%A2%E5%90%97.md)
 - [聊聊ThreadlLocal和引用的那些事](https://github.com/javagrowing/JGrowing/blob/master/Java%E5%9F%BA%E7%A1%80/%E8%81%8A%E8%81%8A%E5%BC%95%E7%94%A8%E5%92%8CThreadlocal%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B.md)
--[一个JIT激进优化引起的可见性误解]
-(https://github.com/javagrowing/JGrowing/blob/master/Java%E5%9F%BA%E7%A1%80/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E6%A0%B8%E5%BF%83%E5%B7%A5%E5%85%B7/%E4%B8%80%E4%B8%AAJIT%E6%BF%80%E8%BF%9B%E4%BC%98%E5%8C%96%E5%BC%95%E8%B5%B7%E7%9A%84%E5%8F%AF%E8%A7%81%E6%80%A7%E8%AF%AF%E8%A7%A3.md)
+- [一个JIT激进优化引起的可见性误解](https://github.com/javagrowing/JGrowing/blob/master/Java%E5%9F%BA%E7%A1%80/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E6%A0%B8%E5%BF%83%E5%B7%A5%E5%85%B7/%E4%B8%80%E4%B8%AAJIT%E6%BF%80%E8%BF%9B%E4%BC%98%E5%8C%96%E5%BC%95%E8%B5%B7%E7%9A%84%E5%8F%AF%E8%A7%81%E6%80%A7%E8%AF%AF%E8%A7%A3.md)
 ### 3.1Java特性
 ### 3.2基本程序设计
 ### 3.3Java并发编程
@@ -80,8 +79,7 @@ JGrowing不是属于某个人的项目，而是属于组织项目。我的想法
 #### 7.1.1分布式事务
 - [解密分布式事务框架-(Seata)Fescar](https://github.com/javagrowing/JGrowing/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/%E8%A7%A3%E5%AF%86%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E6%A1%86%E6%9E%B6-Fescar.md)
 - [深度剖析一站式分布式事务方案Seata(Fescar)-Server](https://github.com/javagrowing/JGrowing/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/%E6%B7%B1%E5%BA%A6%E5%89%96%E6%9E%90%E4%B8%80%E7%AB%99%E5%BC%8F%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E6%96%B9%E6%A1%88Seata(Fescar)-Server.md)
-- 深度剖析一站式分布式事务方案Seata-Client
-(https://github.com/javagrowing/JGrowing/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/%E6%B7%B1%E5%BA%A6%E5%89%96%E6%9E%90%E4%B8%80%E7%AB%99%E5%BC%8F%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E6%96%B9%E6%A1%88Seata-Client.md)
+- [深度剖析一站式分布式事务方案Seata-Client](https://github.com/javagrowing/JGrowing/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/%E6%B7%B1%E5%BA%A6%E5%89%96%E6%9E%90%E4%B8%80%E7%AB%99%E5%BC%8F%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E6%96%B9%E6%A1%88Seata-Client.md)
 - [再有人问你分布式事务，这篇文章扔给他](https://github.com/javagrowing/JGrowing/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/%E5%86%8D%E6%9C%89%E4%BA%BA%E9%97%AE%E4%BD%A0%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%EF%BC%8C%E8%BF%99%E7%AF%87%E6%96%87%E7%AB%A0%E6%89%94%E7%BB%99%E4%BB%96.md)
 
 ### 7.2批处理系统
