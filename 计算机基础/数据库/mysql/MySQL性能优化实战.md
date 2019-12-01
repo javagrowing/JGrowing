@@ -12,7 +12,7 @@
 
 优化MySQL，就不得不说起MySQL性能优化模型，根据优化成本和优化效果，一个金字塔结构可以被绘制出来。
 
-![sql_optimize](/Users/changle.zhang/Pictures/sql_optimize.png)
+![sql_optimize](https://img-blog.csdnimg.cn/20191030235328421.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM1NzYwMTg=,size_16,color_FFFFFF,t_70)
 
 可以看到，从下到上的优化成本越来越高，而优化的效果反而越来越低。
 
@@ -134,7 +134,7 @@ Item          The distilled query
 
 典型的执行结果如下：
 
-![image-20191104162229085](/Users/changle.zhang/Library/Application Support/typora-user-images/image-20191104162229085.png)
+![image-20191104162229085](https://img-blog.csdnimg.cn/20191105005434408.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM1NzYwMTg=,size_16,color_FFFFFF,t_70)
 
 其中各列的简要介绍如下：
 
